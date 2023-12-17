@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{padding: 0; margin: 0; box-sizing: border-box;}
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            perspective: 1800px;
+            perspective-origin: 50% -50%;
+        }
+        .cube{
+            perspective: 900px;
+            height: 200px;
+            width: 200px;
+            transform-style: preserve-3d;
+            
+        }
+        .cube__side{
+            display: grid;
+            position: absolute;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            padding: 10px
+        }
+        .cube__side--red{
+            transform: rotateX(0deg) rotateY(-45deg);
+            left: -63px;
+        }
+        .cube__side--blue{
+            transform: rotateX(0deg) rotateY(45deg);
+            left: 64px;
+        }
+        .cube__side--green{
+            transform: rotateX(90deg) rotateY(0deg) rotateZ(45deg) scale(0.9);
+            top: -108px;
+        }
+        .cube__piece{
+            border: 5px solid black;
+            border-radius: 5px;
+            width: 60px;
+            height: 60px;
+        }
+        .cube__piece--red{
+            background-color: red;
+        }
+        .cube__piece--blue{
+            background-color: blue;
+        }
+        .cube__piece--green{
+            background-color: green;
+        }
+    </style>
+
+    <div class="container">
+        <div class="cube">
+            <div class="cube__side cube__side--red">
+                <div class="cube__piece cube__piece--red"></div>
+                <div class="cube__piece cube__piece--red"></div>
+                <div class="cube__piece cube__piece--red"></div>
+                <div class="cube__piece cube__piece--red"></div>
+                <div class="cube__piece cube__piece--red"></div>
+                <div class="cube__piece cube__piece--red"></div>
+                <div class="cube__piece cube__piece--red"></div>
+                <div class="cube__piece cube__piece--red"></div>
+                <div class="cube__piece cube__piece--red"></div>
+            </div>
+            <div class="cube__side cube__side--blue">
+                <div class="cube__piece cube__piece--blue"></div>
+                <div class="cube__piece cube__piece--blue"></div>
+                <div class="cube__piece cube__piece--blue"></div>
+                <div class="cube__piece cube__piece--blue"></div>
+                <div class="cube__piece cube__piece--blue"></div>
+                <div class="cube__piece cube__piece--blue"></div>
+                <div class="cube__piece cube__piece--blue"></div>
+                <div class="cube__piece cube__piece--blue"></div>
+                <div class="cube__piece cube__piece--blue"></div>
+            </div>
+            <div class="cube__side cube__side--green">
+                <div class="cube__piece cube__piece--green"></div>
+                <div class="cube__piece cube__piece--green"></div>
+                <div class="cube__piece cube__piece--green"></div>
+                <div class="cube__piece cube__piece--green"></div>
+                <div class="cube__piece cube__piece--green"></div>
+                <div class="cube__piece cube__piece--green"></div>
+                <div class="cube__piece cube__piece--green"></div>
+                <div class="cube__piece cube__piece--green"></div>
+                <div class="cube__piece cube__piece--green"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

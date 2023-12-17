@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        body{
+            color: black;
+        }
+
+        .crono{
+            display: flex;
+            margin: 0px 0px 10px 0px;
+        }
+
+        .slot{
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            font-size: 2rem;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .buttons{
+            margin-left: 10px;
+        }
+
+    </style>
+    
+    <div class="crono">
+        <div class="slot slot__seconds">0</div>
+        <div class="slot slot__centiseconds">0</div>
+    </div>
+    <div class="buttons">
+        <button class="button__initiate" value="initiate">iniciar</button>
+        <button class="button__pause" value="pause">parar</button>
+        <button class="button__reset" value="reset">poner a cero</button>
+    </div>
+
+    <script>
+        //constantes y variables
+        const slotSeconds = document.querySelector('.slot__seconds');
+        const slotCentiseconds = document.querySelector('.slot__centiseconds');
+        const buttons = document.querySelector('.buttons');
+        let counterSeconds = 0;
+        let counterMiliseconds = 0;
+        let cronoTimer = "";
+
+        //funciones
+        function initiateCrono(){
+            cronoTimer = setInterval(() => {
+                counterMiliseconds++
+                
+                if(counterMiliseconds === 100){
+                    counterSeconds += 1;
+                    counterMiliseconds = 0;
+                }
+                slotCentiseconds.innerHTML = counterMiliseconds;
+                slotSeconds.innerHTML = counterSeconds;
+
+            }, 10);
+        }
+
+        function pauseCrono(){
+            clearInterval(cronoTimer); 
+        }
+
+        function resetCrono(){
+            slotCentiseconds.innerHTML = 0;
+            slotSeconds.innerHTML = 0;
+        }
+
+        //llamadas a funciones, eventos, etc
+        buttons.addEventListener('click', function(e){
+            
+            e.target.value === "initiate" && initiateCrono();
+            e.target.value === "pause" && pauseCrono();
+            e.target.value === "reset" && resetCrono();
+        })
+
+    </script>
+    
+</body>
+</html>

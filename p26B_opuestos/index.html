@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 1rem;
+        }
+        .container{
+            display: flex;
+            height: 100vh;
+        }
+        .container__yo, .container__tu{
+            flex-basis: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container__yo{
+            background-color: black;
+            color: white;
+        }
+
+        .container__movil{
+            display: none;
+        }
+        @media screen and (max-width:600px){
+            .container{
+                flex-direction: column;
+            }
+            .container__responsive{
+                display: none;
+            }
+            .container__movil{
+            display: block;
+            }
+            .container__yo{
+                background-color: aqua;
+                color: white;
+            }
+        }
+        
+
+
+    </style>
+
+    <div class="container">
+        <div class="container__yo">
+            <p class="container__responsive container__responsive--left">Yo</p>
+            <p class="container__movil container__movil--left">Solidaridad</p>
+        </div>
+        <div class="container__tu">
+            <p class="container__responsive container__responsive--right">Tú</p>
+            <p class="container__movil container__movil--right">La solidaridad construye un mundo sin ego más humano y más digno</p>
+        </div>
+    </div>
+</body>
+</html>

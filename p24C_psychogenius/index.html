@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="circles__container">
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+        <div class="circle__item">G
+            <div class="photo"><img src="img/mcenroe.jpg" alt=""></div>
+        </div>
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+    </div>
+    <div class="circles__container">
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+        <div class="circle__item">E
+            <div class="photo"><img src="img/mcenroe.jpg" alt=""></div>
+        </div>
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+    </div>
+    <div class="circles__container">
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+        <div class="circle__item">N
+            <div class="photo"><img src="img/mcenroe.jpg" alt=""></div>
+        </div>
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+    </div>
+    <div class="circles__container">
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+        <div class="circle__item">I
+            <div class="photo"><img src="img/mcenroe.jpg" alt=""></div>
+        </div>
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+    </div>
+    <div class="circles__container">
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+        <div class="circle__item">U
+            <div class="photo"><img src="img/mcenroe.jpg" alt=""></div>
+        </div>
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+    </div>
+    <div class="circles__container">
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+        <div class="circle__item">S
+            <div class="photo"><img src="img/mcenroe.jpg" alt=""></div>
+        </div>
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+        <div class="circle__item"></div>
+    </div>
+
+    <script>
+        const flexItems = document.querySelectorAll('.circle__item');
+        flexItems.forEach((flexItem,index) => {
+            const color = 'hsl('+ Math.floor(280 -(index*(280/flexItems.length))) +', 100%, 50%)';
+            flexItem.style.background = color;
+        });
+    </script>
+</body>
+</html>

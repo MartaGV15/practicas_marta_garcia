@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button>Lanzar moneda</button>
+    <div class="result"></div>
+
+    <p class="dom-item">Soy un elemento DOM</p>
+    <div class="buttons">
+        <button value="copy" class="buttons__button buttons__button--copy">Copy</button>
+        <button value="delete" class="buttons__button buttons__button--delete">Delete</button>
+        <button value="insert" class="buttons__button buttons__button--insert">Insert text</button>
+    </div>
+
+    <script>
+
+    //Ejercicio 1
+    function drawCircle(diameter) {
+        document.body.innerHTML += `<div style="height:${diameter}px; width:${diameter}px; background:red; border-radius:50%"></div>`
+    }        
+    for (let index = 0; index < 10; index++){
+        drawCircle(20*index);
+    }
+
+    //Ejercicio 2
+    const button = document.querySelector('button');
+    const result = document.querySelector('.result');
+
+    button.addEventListener('click', lanzarMoneda)
+    
+    var contador = 0;
+
+    function lanzarMoneda() {
+        
+        contador = contador +1;
+        
+        if(contador > 3){
+            return result.innerHTML = "No tientes a tu suerte"
+        }
+
+        return result.innerHTML = (Math.floor(Math.random()*2)%2) == "0" ? "cara" : "cruz"
+        
+    }
+    
+    //Ejercicio 4
+    const buttons = document.querySelector('.buttons');
+    
+    buttons.addEventListener('click', function(e){
+        const domItem = document.querySelector('.dom-item');
+
+        clickOnelements(domItem, e.target.value);
+    })
+    function clickOnelements(domElement, action){
+        if (action === "delete"){
+            domElement.remove();
+        }
+        else if (action === "copy"){
+            document.body.appendChild(domElement.cloneNode(true));
+        }
+        else if (action === "insert"){
+            domElement.innerHTML = "Texto generado por JS";
+        }
+    }
+
+    //Ejercicio 5
+    const myObject = {
+        prop1: "super",
+        prop2: "cali",
+        prop3: "fragi",
+        prop4: "listicoespialidoso",
+        concatenar: function(){
+            let all ="";
+
+            Object.values(this).forEach((item)=>{
+                if(typeof item === "string") all+=item;
+            });
+
+            return all;
+        }
+      
+    }
+    console.log(myObject.concatenar()) 
+
+    </script>
+</body>
+</html>

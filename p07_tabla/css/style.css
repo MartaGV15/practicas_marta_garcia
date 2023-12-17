@@ -1,0 +1,29 @@
+.fila{
+    border: 1px solid white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.fila1{
+    background-color: #0000ff; 
+    color: white;
+    text-transform: uppercase;
+}
+.fila2{
+    background-color: #8F8FFF; 
+    
+}
+.fila3{
+    background-color: #AFAFFF; 
+}
+.fila4{
+    background-color: #CFCFFF; 
+}
+.fila5{
+    background-color: #EFEFFF; 
+}
+
+.columna{
+    width: 120px;
+    height: 50px;
+    text-align: center;
+}

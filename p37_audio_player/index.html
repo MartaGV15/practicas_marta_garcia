@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&family=Inconsolata&family=Montserrat:wght@300&family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="player">
+        <div class="player__left-section">
+            <div class="player__image"><img src="img/julio.avif" alt=""></div>
+            <div class="player__buttons">
+                <button class="player__button player__button--stop"><img src="vector/stop.svg" alt="" data-value="stop"></button>
+                <button class="player__button player__button--play"><img src="vector/play.svg" alt="" data-value="play"></button><button class="player__button player__button--ffwd"><img src="vector/forward.svg" alt="" data-value="forward"></button>
+            </div>
+        </div>
+        <div class="player__right-section">
+            <div class="player__trackname">
+                <p class="player__title player__title--name">TRACNAME</p>
+                <p class="player__subtitle player__subtitle--name">BAMBOLEO</p>
+            </div>
+            <div class="player__time">
+                <p class="player__title player__title--time">TIME</p>
+                <p class="player__subtitle player__subtitle--time">4:05</p></div>
+        </div>
+    </div>
+    <script>
+        const audiotrack = new Audio('audio/bamboleo.mp3');
+        const buttons = document.querySelector('.player__buttons');
+        const playButton = document.querySelector('.player__button--play img');
+        const stopButton = document.querySelector('.player__button--stop img');
+        
+
+        function audioEngine(e) {
+            e.target.dataset.value === "stop" && stopEngine();
+            e.target.dataset.value === "play" && playEngine();
+        }
+
+        function playEngine(){
+            audiotrack.play();
+            playButton.src = 'vector/play_pressed.svg';
+            stopButton.src = 'vector/stop.svg';
+        }
+
+        function stopEngine(){
+            audiotrack.pause();
+            audiotrack.currentTime = 0;
+            stopButton.src = 'vector/stop_pressed.svg';
+            playButton.src = 'vector/play.svg';
+        }
+
+        buttons.addEventListener('click', audioEngine);
+    </script>
+</body>
+</html>

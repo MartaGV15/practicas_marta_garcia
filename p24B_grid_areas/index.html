@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .grid_container{
+            display: grid;
+            grid-template-areas: "cabecera cabecera cabecera"
+            "lateral principal principal"
+            "pie pie pie";
+        }
+        header{
+            background-color: darkviolet;
+            padding: 50px;
+            grid-area: cabecera;
+        }
+        aside{
+            background-color: darkseagreen;
+            padding: 50px;
+            grid-area: lateral;
+        }
+        main{
+            background-color: lightseagreen;
+            padding: 50px;
+            grid-area: principal;
+        }
+        footer{
+            background-color: darkviolet;
+            padding: 50px;
+            grid-area: pie;
+        }
+    </style>
+    <div class="grid_container">
+        <header>Header</header>
+        <aside>Side</aside>
+        <main>Main</main>
+        <footer>Footer</footer>
+    </div>
+</body>
+</html>

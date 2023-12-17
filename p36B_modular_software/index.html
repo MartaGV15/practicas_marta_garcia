@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .padd40{
+            padding: 40px;
+        }
+        .bg-red{
+            background-color: red;
+        }
+        .border-2{
+            border: 2px solid black;
+        }
+    </style>
+    
+    <div>
+        <img src="https://picsum.photos/200/300" alt="foto random" title="foto aleatoria">
+    </div>
+    <button class="btn1">click me</button>
+
+    <script>
+        const btn1 = document.querySelector('.btn1');
+        const captureObj = document.querySelector('div');
+        const imgCapt = document.querySelector('div img');
+
+        function divChanger(obj){
+            obj.classList.add('padd40');
+            obj.classList.add('bg-red');
+            obj.classList.add('border-2');
+        }
+
+        btn1.addEventListener('click', function(){
+            divChanger(captureObj);
+            imgCapt.setAttribute('title', 'foto random');
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+*{ padding: 0; margin: 0; box-sizing: border-box;}
+
+img { width: 100%; display: block;}
+
+.ranking{
+    background-color: midnightblue;
+    min-height: 100vh;
+}
+
+.ranking__title{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    text-align: center;
+    padding: 40px;
+}
+
+.ranking__photo-container{
+    max-width: 100px;
+}
+
+.ranking__artist-item{
+    border: 4px solid rgb(67, 135, 219);
+}
+
+.ranking1{
+    border: 4px solid white;
+}
+
+.ranking2{
+    border: 4px solid red;
+}
+
+.ranking3{
+    border: 4px solid green;
+}
+
+.ranking4{
+    border: 4px solid yellow;
+}

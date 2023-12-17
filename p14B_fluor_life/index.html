@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<style>
+    body{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        background-color: black;
+        color: white;
+    }
+    span{
+        font-weight: 600;
+        font-size:40px;
+        padding: 5px;
+    }
+    header, footer{
+        background-color: rgb(22, 21, 21);
+    }
+    footer{
+        text-align: center;
+    }
+    header span {
+        cursor: pointer;
+    }
+    header span:first-child:hover{
+        color: magenta;
+    }
+    header span:nth-child(2):hover{
+        color: yellow;
+    }
+    header span:last-child:hover{
+        color: cyan;
+    }
+    header span:nth-child(2)::before{
+        content: "|";
+        margin-right: 17px;
+    }
+    header span:nth-child(2)::after{
+        content: "|";
+        margin-left: 17px;
+    }
+    header span:nth-child(2)::before, header span:nth-child(2)::after{
+        color: white;
+    }
+
+    section div div{
+        height: 50px;
+        cursor: pointer;
+    }
+    
+    section div:first-child div{
+        background: cyan;
+        width: 90%;
+    }
+    section div:nth-child(2) div{
+        background: magenta;
+        width: 85%;
+    }
+    section div:last-child div{
+        background: yellow;
+        width: 100%;
+    }
+    section div div:hover{
+        background-color: white;
+        cursor: pointer;
+    }
+
+    footer div{
+        display: inline-block;
+        background-color: white;
+        width: 10px;
+        height: 10px;
+        border-radius: 50px;
+        padding: 5px;
+        margin-top: 20px;
+    }
+
+    
+    
+</style>
+
+   <header>
+        <span>be fluor</span>
+        <span>be lightful</span>
+        <span>be cool</span>
+   </header>
+   <section>
+        <div>
+            <p>cyan</p>
+            <div></div>
+        </div>
+        <div>
+            <p>magenta</p>
+            <div></div>
+        </div>
+        <div>
+            <p>yellow</p>
+            <div></div>
+        </div>
+   </section>
+        <footer>
+        <div></div>
+        <div></div>
+        <div></div>
+        </footer>
+
+</body>
+</html>

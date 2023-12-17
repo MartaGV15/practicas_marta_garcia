@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        // Ejercicio 1
+        for (let contador = 0; contador <10; contador++) {
+
+            let color = "#00"+ contador;
+            if(contador ==2){color="#F00"};
+
+            document.body.innerHTML+= "<p style='border: 1px solid violet; background-color: "+ color +"; color: #FFF; padding: 20px;' >párrafo creado con un bucle for</p>"
+        }
+
+        // Ejercicio 2
+        for(let i=100; i>0; i--) {
+            const buttonElement = document.createElement('button');
+            buttonElement.innerHTML = i;
+            buttonElement.addEventListener('click', function(){
+                console.log("Hice click en el número " + i);
+            })
+            document.body.appendChild(buttonElement);
+        }
+
+        // Ejercicio 4
+        const meses = [
+            "enero",
+            "febrero",
+            "marzo",
+            "abril",
+            "mayo",
+            "junio",
+            "julio",
+            "agosto",
+            "septiembre",
+            "octubre",
+            "noviembre",
+            "diciembre"
+        ]
+        // Solución con BUCLE FOR
+        for(let i=0; i < meses.length; i++){
+            if(meses[i]=="febrero"){
+                continue;
+            }
+            console.log(meses[i]);
+        }
+        // Solución con BUCLE FOREACH
+        meses.forEach((element) =>{
+            if(element == "febrero") {return;}
+            console.log('-----', element);
+        })
+        // Solución con BUCLE FOR OF
+        for(let item of meses){
+            console.log(item);
+        }
+
+        // Ejercicio 5
+        const diasSemana = {
+            lunes: "L",
+            martes: "M",
+            miercoles: "X",
+            jueves: "J",
+            viernes: "V",
+            sabado: "S",
+            domingo: "D"
+        }
+        
+        document.body.innerHTML = '<div class="container"></div>'; //creo un contenedor
+
+        const container = document.querySelector('.container'); //capturo el contenedor
+
+        container.style.display = "grid"; 
+        container.style.gridTemplateColumns = "repeat(4, 1fr)";
+        container.style.border = "1px solid #000"; //aplico estilo al contenedor
+
+        meses.forEach((mes)=>{
+            container.innerHTML += `<div class= "mes-${mes}" style="padding:10px; border:1px solid #000;"><h3>${mes}</h3></div>`;
+
+            const mesActual = document.querySelector('.mes-' + mes); //capturo el mes
+            const tituloMes = document.querySelector('.mes-' + mes + ' h3');
+            tituloMes.style.gridColumn = "span 7";
+
+            mesActual.style.display = "grid";
+            mesActual.style.gridTemplateColumns = "repeat(7, 1fr)"; //estilos a mes
+
+            Object.values(diasSemana);//convierto objeto en array
+
+            mesActual.innerHTML += `<div class="dias-title-${mes}"></div>`;//creo contenedor para los días
+
+            const diasSemanaHeading = document.querySelector('.dias-title-'+mes);//capturo header con los días
+
+            diasSemanaHeading.style.gridColumn = "span 7";
+            diasSemanaHeading.style.display= "grid";
+            diasSemanaHeading.style.gridTemplateColumns= "repeat(7, 1fr)";
+
+            Object.values(diasSemana).forEach((dia)=>{
+                diasSemanaHeading.innerHTML += `<p style="font-weight:800">${dia}</p>`;
+            })
+
+            let dias = 31;
+            if(mes== "febrero") dias = 29;
+            if(mes== "abril" || mes== "junio" || mes== "septiembre" || mes== "noviembre") dias = 30;
+
+            for(let i = 1; i<=dias; i++){
+                mesActual.innerHTML += `<span style="padding:5px">${i}</span>`
+            } //creo un bucle de iteraciones, uno para cada día
+
+        })
+
+        
+
+        
+
+
+
+    </script>
+
+</body>
+</html>

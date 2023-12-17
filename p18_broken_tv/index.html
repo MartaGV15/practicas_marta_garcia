@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/fun.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    
+    <style>
+        *{padding: 0; margin: 0; box-sizing: border-box;}
+        body{
+            background-color: black;
+        }
+        .tv{
+            position: relative;
+            padding: 30px;
+            border: 4px solid yellow;
+            border-radius: 20px;
+            display: inline-flex;
+            max-width: 1200px;
+            width: 100%;
+            display: inline-flex;
+            flex-direction: column;
+        }
+        .tv_screen{
+            border: 4px solid yellow;
+            border-radius: 10px;
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+        }
+        .tv_image{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .tv_buttons{
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .tv_button-item{
+            padding: 5px 10px;
+        }
+        .tv_buttons-8{
+            display: grid;
+            grid-template-columns: 25% 25% 25% 25%;
+            max-width: 200px;
+            width: 100%;
+            gap: 5px;
+        }
+        .tv_buttons-on-off{
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .button_on-off{
+            width: 60px;
+            height: 30px;
+        }
+        .button_sint{
+            width: 60px;
+            height: 10px;
+        }
+        .tv_legs{
+            position: absolute;
+            width: 100px;
+            height: 30px;
+            background-color: yellow;
+            bottom: -4%;
+        }
+        .tv_legs-left{
+            left: 10%;
+        }
+        .tv_legs-right{
+            right: 10%;
+        }
+        .turn-off{
+            opacity: 0;
+        }
+
+    </style>
+
+    <div class="tv">
+        <div class="tv_screen">
+            <img class="tv_image" src="img/nightmare.jpeg" alt="nightmare" id="tvImg">
+        </div>
+        <div class="tv_buttons">
+            <div class="tv_buttons-8">
+                <button class="tv_button-item" id="btn1" data-number="0">1</button>
+                <button class="tv_button-item" id="btn2" data-number="1">2</button>
+                <button class="tv_button-item" id="btn3" data-number="2">3</button>
+                <button class="tv_button-item" id="btn4" data-number="3">4</button>
+                <button class="tv_button-item" id="btn5" data-number="4">5</button>
+                <button class="tv_button-item" id="btn6" data-number="5">6</button>
+                <button class="tv_button-item" id="btn7" data-number="6">7</button>
+                <button class="tv_button-item" id="btn8" data-number="7">8</button>
+            </div>
+            <div class="tv_buttons-on-off">
+                <button class="button_on-off"></button>
+                <p>ON/OFF</p>
+                <button class="button_sint"></button>
+                <p>SINT</p>
+            </div>
+        </div>
+        <div class="tv_legs tv_legs-left"></div> 
+        <div class="tv_legs tv_legs-right"></div> 
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .dado{
+            height: 100vh;
+            background-color: rgb(184, 118, 19);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .dado__shape{
+            height: 300px;
+            flex-basis: 300px;
+            border-radius: 30px;
+            background-color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .dado__point{
+            width: 60px;
+            display: inline-block;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            background-color: black;
+        }
+        .dado__point1{
+            flex-direction: column;
+            justify-content: space-between;
+            align-self: flex-start;
+        }
+        .dado__point2{
+            align-self: flex-end;
+        }
+    </style>
+
+    <div class="dado">
+        <div class="dado__shape">
+            <div class="dado__point dado__point1"></div>
+            <div class=" dado__point dado__point2"></div>
+        </div>
+    </div>
+</body>
+</html>
